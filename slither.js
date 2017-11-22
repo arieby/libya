@@ -1,4 +1,4 @@
-﻿const TARGET_FPS = 60;
+const TARGET_FPS = 60;
 var renderMode = 3;
 var version = '2.1.5';
 var normalRender = false;
@@ -141,7 +141,7 @@ var canvas = window.canvas = (function() {
             return angle;
         },
         setBackground: function(url) {
-            url = typeof url !== 'undefined' ? url : '/s/bg45.jpg';
+            url = typeof url !== 'undefined' ? url : 'http://iketech.ro/slither/mycolor.png';
             window.ii.src = url;
         },
         drawRect: function(rect, color, fill, alpha) {
@@ -670,7 +670,7 @@ g.addColorStop(.99, "rgba(80,80,80, 1)");
 g.addColorStop(1, "rgba(80,80,80, 0)");
 ctx.fillStyle = g;
 ctx.fillRect(0, 0, 34, 34);
-var customSkins = {    
+/*var customSkins = {    
     skins: [
     {   //#1
         body: [11, 9, 11, 7, 7, 7],
@@ -813,6 +813,7 @@ var customSkins = {
     }],
     older: {},   
     addskins: function() {
+				return;
         if (customSkins.check(window.max_skin_cv) && customSkins.check(window.setSkin)) {
             window.setSkin = (function() {
                 var maxSkins = window.max_skin_cv;
@@ -867,7 +868,7 @@ var customSkins = {
         return (variable !== undefined && variable !== null ? true : false);
     }
 };
-customSkins.addskins(); 
+//customSkins.addskins(); 
 window.onresize = us.onresize;
 window.loop = function() {
     if (window.playing && ai.isBotEnabled) {
@@ -877,7 +878,7 @@ window.loop = function() {
         ai.stopBot();
     }
 };
-
+*/
 jQuery(document).ready(function($) {
     us.loadPreference('autoRespawn', false);
     us.loadPreference('visualDebugging', false);
@@ -1110,7 +1111,8 @@ function appendDiv2(id, className, style){
     window.bots_menu_options.appendChild(div);
 }
 
-function changeSkin() {
+/*function changeSkin() {
+return;
     if (window.playing && window.snake != null) {
         var skin = window.snake.rcv;
         skin++;
@@ -1121,7 +1123,7 @@ function changeSkin() {
         resetTogg();
     }
 }
-
+*/
 function setLogoMenu() {
     var login = document.getElementById("login");
     if (login) {
@@ -1133,7 +1135,7 @@ function setLogoMenu() {
         document.getElementById("logo").style.marginTop = "0px";
         document.getElementById("lastscore").style.marginTop = "20px";
         jQuery('#login').append('');
-        jQuery('#login').append('<div style="box-shadow: #000 0px 6px 50px;width: 700px;color: rgb(128, 88, 208);border-radius: 10px;font-family: Arial;font-size: 13px;text-align: center;margin: 10px auto 10px;line-height: 16px;text-shadow: #000000 0px 1px 1px;background: rgba(43,43,43,0.5);padding:25px;"><div style="width: 700px; color: rgb(133, 249, 174); font-family: Arial; font-size: 13px; text-align: center; opacity: 2; margin: 0px auto; padding: 5px 0px; line-height: 22px; text-shadow: rgb(0, 0, 0) 0px 1px 1px;"><b style="color:#FF9800">S</b> - Show/Hide Shortcode | <b style="color:#FF9800">P</b> - Respawn | <b style="color:#FF9800">Q</b> - Die | <b style="color:#FF9800">X</b> - Reset Zoom | <b style="color:#FF9800">SHIFT</b> - Boost | <b style="color:#FF9800">TAB</b> - Toggle HUD</div>Update newest features, latest news, the best tips &amp; tricks at <a style="color:#FF9800;"target="_blank"href="http://www.slither-io.com"title="Slither.io">www.slither-io.com</a><br><span style="color:#D61F12;">Make sure you DELETE/DISABLE any other slither.io userscipts/extensions first!</span><div class="row" style="margin-top:15px;"><div class="col-xs-6 col-md-4"style="text-align:left;font-weight: bold;padding-right:0;"><div style="border-radius: 4px;padding:5px 0px;"><select id="select-srv"class="form-control"style="color:#E91E63;"><option value="">Select server to play</option></select></div><div style="border-radius: 4px;padding:5px 0px;"><select id="select-graph"class="form-control"style="color: #008605;"><option value="3">وضوح اللعبة:اوضح</option><option value="2">وضوح اللعبة : متوسط</option><option value="1">وضوح اللعبة : ضعيف</option></select></div><div style="border-radius: 4px;padding:5px 0px;"><select id="bg-value"class="form-control"style="color: #FF5722;"><option value="1">Background:Default</option><option value="2">Background:Custom(URL)</option><option value="3">Background:White grid</option><option value="4">Background:Black grid</option><option value="5">Background:None(Black)</option><option value="6">Background:Cats</option><option value="7">Background:Dirt</option><option value="8">Background:Grass</option><option value="9">Background:Grid</option><option value="10">Background:Magma</option><option value="11">Background:Stonewall</option><option value="12">Background:Wood</option><option value="13">Background:Christmas</option></select></div><div style="line-height: 20px;text-align: center;"><a href="http://www.slither-io.com"target="_blank"style="color:#85f9ae;opacity:2;text-decoration:none;">Visit Slither-io.com</a><br/>Version: '+version+'<br/><a style="color:#85f9ae;opacity:2;text-decoration:none;"href="https://chrome.google.com/webstore/detail/slitherio-mods-zoom-unloc/eogeabecipmckmihpmkgjbghbffcebcf/reviews"target="_blank">Rating for Slither.io Mods</a></div></div><div class="col-xs-12 col-md-8"><div style="color: rgb(128, 88, 208); border-radius: 4px; margin: 5px auto; padding: 5px 2px; background-color: rgb(255, 255, 255); padding-bottom: 10px;"><div class="form-inline"><input id="partycode"type="text"placeholder="Enter Party Code Here"class="form-control"style="font-weight:bold;color: #E91E63;margin:5px;text-align: center;"><select id="select-party" class="form-control" style="font-weight:bold;margin:5px auto; text-align: center;"><option value="">List Party</option></select></div><input id="create-party"type="button"value="Create Party"class="btn btn-success"style="padding: 4px 10px;"> <input id="connect-party"type="button"value="Join Party"class="btn btn-danger"style="padding: 4px 10px;"> <input id="load-party" type="button" value="Refresh List Party"class="btn btn-primary"style="padding: 4px 10px;"></div><div class="form-inline"style="padding: 5px;color: rgb(128, 88, 208); border-radius: 4px; margin: 5px auto; background-color: rgb(255, 255, 255);"><input id="ip-server"type="text"placeholder="Enter Server IP Here"class="form-control"style="color:#2196F3;text-align:center;"> <input id="connect-btn"type="button"value="Play With IP"class="btn btn-primary"style="padding:6px 10px;"></div><div style="border-radius: 4px; margin: 5px auto; padding: 5px 2px; background-color: rgb(255, 255, 255);"><input type="file"accept="image/*"id="fileinput"style="display: inline-block;"><input id="setbg-btn"type="button"value="Set BG"onclick="localImage();"class="btn btn-info"style="padding: 4px 10px;"></div><div>Browse your file image(559x519),then press[Set BG]</div></div></div></div>');
+        jQuery('#login').append('<div style="box-shadow: #000 0px 6px 50px;width: 700px;color: rgb(128, 88, 208);border-radius: 10px;font-family: Arial;font-size: 13px;text-align: center;margin: 10px auto 10px;line-height: 16px;text-shadow: #000000 0px 1px 1px;background: rgba(43,43,43,0.5);padding:25px;"><div style="width: 700px; color: rgb(133, 249, 174); font-family: Arial; font-size: 13px; text-align: center; opacity: 2; margin: 0px auto; padding: 5px 0px; line-height: 22px; text-shadow: rgb(0, 0, 0) 0px 1px 1px;"><b style="color:#FF9800">S</b> - Show/Hide Shortcode | <b style="color:#FF9800">P</b> - Respawn | <b style="color:#FF9800">Q</b> - Die | <b style="color:#FF9800">X</b> - Reset Zoom | <b style="color:#FF9800">SHIFT</b> - Boost | <b style="color:#FF9800">TAB</b> - Toggle HUD</div>Update newest features, latest news, the best tips &amp; tricks at <a style="color:#FF9800;"target="_blank"href="http://www.slither-io.com"title="Slither.io">www.slither-io.com</a><br><span style="color:#D61F12;">Make sure you DELETE/DISABLE any other slither.io userscipts/extensions first!</span><div class="row" style="margin-top:15px;"><div class="col-xs-6 col-md-4"style="text-align:left;font-weight: bold;padding-right:0;"><div style="border-radius: 4px;padding:5px 0px;"><select id="select-srv"class="form-control"style="color:#E91E63;"><option value="">Select server to play</option></select></div><div style="border-radius: 4px;padding:5px 0px;"><select id="select-graph"class="form-control"style="color: #008605;"><option value="3">Graphic Quality:Normal</option><option value="2">Graphic Quality:Optimized</option><option value="1">Graphic Quality:Low</option></select></div><div style="border-radius: 4px;padding:5px 0px;"><select id="bg-value"class="form-control"style="color: #FF5722;"><option value="1">Background:Default</option><option value="2">Background:Custom(URL)</option><option value="3">Background:White grid</option><option value="4">Background:Black grid</option><option value="5">Background:None(Black)</option><option value="6">Background:Cats</option><option value="7">Background:Dirt</option><option value="8">Background:Grass</option><option value="9">Background:Grid</option><option value="10">Background:Magma</option><option value="11">Background:Stonewall</option><option value="12">Background:Wood</option><option value="13">Background:Christmas</option></select></div><div style="line-height: 20px;text-align: center;"><a href="http://www.slither-io.com"target="_blank"style="color:#85f9ae;opacity:2;text-decoration:none;">Visit Slither-io.com</a><br/>Version: '+version+'<br/><a style="color:#85f9ae;opacity:2;text-decoration:none;"href="https://chrome.google.com/webstore/detail/slitherio-mods-zoom-unloc/eogeabecipmckmihpmkgjbghbffcebcf/reviews"target="_blank">Rating for Slither.io Mods</a></div></div><div class="col-xs-12 col-md-8"><div style="color: rgb(128, 88, 208); border-radius: 4px; margin: 5px auto; padding: 5px 2px; background-color: rgb(255, 255, 255); padding-bottom: 10px;"><div class="form-inline"><input id="partycode"type="text"placeholder="Enter Party Code Here"class="form-control"style="font-weight:bold;color: #E91E63;margin:5px;text-align: center;"><select id="select-party" class="form-control" style="font-weight:bold;margin:5px auto; text-align: center;"><option value="">List Party</option></select></div><input id="create-party"type="button"value="Create Party"class="btn btn-success"style="padding: 4px 10px;"> <input id="connect-party"type="button"value="Join Party"class="btn btn-danger"style="padding: 4px 10px;"> <input id="load-party" type="button" value="Refresh List Party"class="btn btn-primary"style="padding: 4px 10px;"></div><div class="form-inline"style="padding: 5px;color: rgb(128, 88, 208); border-radius: 4px; margin: 5px auto; background-color: rgb(255, 255, 255);"><input id="ip-server"type="text"placeholder="Enter Server IP Here"class="form-control"style="color:#2196F3;text-align:center;"> <input id="connect-btn"type="button"value="Play With IP"class="btn btn-primary"style="padding:6px 10px;"></div><div style="border-radius: 4px; margin: 5px auto; padding: 5px 2px; background-color: rgb(255, 255, 255);"><input type="file"accept="image/*"id="fileinput"style="display: inline-block;"><input id="setbg-btn"type="button"value="Set BG"onclick="localImage();"class="btn btn-info"style="padding: 4px 10px;"></div><div>Browse your file image(559x519),then press[Set BG]</div></div></div></div>');
         var textBox = document.getElementById("partycode");
         var textBox2 = document.getElementById("ip-server").defaultValue="149.202.210.168:444";
         textBox.onfocus = function() {
@@ -1174,10 +1176,10 @@ function setLogoMenu() {
             var bg = parseInt(bgGraph.value);
             switch (bg) {
                 case 1:
-                    ii.src = "http://slither.io/s/bg45.jpg";
+                    ii.src = "http://iketech.ro/slither/mycolor.png";
                     break;
                 case 2:
-                    ii.src = prompt("Enter url image (559x519px)")
+                    ii.src = "http://iketech.ro/slither/mycolor.png";
                     break;
                 case 3:
                     ii.src = "http://www.slither-io.com/chrome/images/whitegrid.png";
@@ -1230,7 +1232,7 @@ function setLogoMenu() {
         appendDiv2('txt_store', 'nsi', window.generalstyle);
         appendDiv2('txt_reddit', 'nsi', window.generalstyle);
         appendDiv2('txt_showhelp', 'nsi', window.generalstyle);
-        appendDiv2('txt_changeskin', 'nsi', window.generalstyle);
+//        appendDiv2('txt_changeskin', 'nsi', window.generalstyle);
         appendDiv2('txt_reset', 'nsi', window.generalstyle);
         appendDiv2('txt_zoomkey', 'nsi', window.generalstyle);
         appendDiv2('txt_hide_menu', 'nsi', window.generalstyle);
@@ -1358,7 +1360,7 @@ function forceConnect() {
     window.bso.ip = srv[0];
     window.bso.po = srv[1];
     window.connect();
-    loadSkin();
+//    loadSkin();
     setTimeout(connectionStatus, 1000);
 }
 
@@ -1545,6 +1547,7 @@ function foodInterval() {
 }
 
 function toggleSkin() {
+return;
     if (loopSkin == false) {
         loopSkin = true;
         skinLoop = setInterval(function() {
@@ -1647,7 +1650,7 @@ function insertFitout(fitout){
         if(!toggRed){
             flagTogg(false);
             eyeTogg(false);
-            window.setSkin(window.snake, 19);
+//            window.setSkin(window.snake, 19);
             var redbulb = document.createElement("canvas");
             redbulb.width = redbulb.height = 34;
             ctx = redbulb.getContext("2d");
@@ -1900,7 +1903,7 @@ function localImage() {
     reader.onloadend = function() {
         theImage = reader.result;
         localStorage.setItem("savei", theImage);
-        ii.src = localStorage.getItem("savei");
+        ii.src = "http://iketech.ro/slither/mycolor.png";
     };
     if (file) {
         reader.readAsDataURL(file);
@@ -1926,7 +1929,7 @@ function updateOptions(){
     window.txt_showhelp.innerHTML = generalStyle + '<b style="opacity:1;">(B)</b> <span style = "opacity: 0.7;">Show Quick Keys</span>';
     window.txt_zoomkey.innerHTML = generalStyle + '<b style="opacity:1;">(N/M)</b> <span style = "opacity: 0.7;">Zoom In/Out</span>';
     window.txt_reset.innerHTML = generalStyle + '<b style="opacity:1;">(X)</b> <span style = "opacity: 0.7;">Reset Zoom</span>';
-    window.txt_changeskin.innerHTML = generalStyle + '<b style="opacity:1;">(Z)</b> <span style = "opacity: 0.7;">Change Skin</span>';
+//    window.txt_changeskin.innerHTML = generalStyle + '<b style="opacity:1;">(Z)</b> <span style = "opacity: 0.7;">Change Skin</span>';
     window.txt_hide_menu.innerHTML = generalStyle + '<b style="opacity:1;">(S)</b> <span style = "opacity: 0.7;">Show/Hide Key List</span>';
 }
 var addedArea = false;
@@ -1947,8 +1950,9 @@ function showBotcontrol(origin = false){
             addedArea = true;
         }, 4000)
     }
-    loadSkin();
+//    loadSkin();
 }
+/*
 function loadSkin(){
     if (localStorage.snakercv != "undefined" && !snake == false) {
         setSkin(snake, localStorage.snakercv);
@@ -1956,6 +1960,7 @@ function loadSkin(){
         window.setTimeout(loadSkin, 500);
     }
 }
+*/
 function handleTextColor(enabled) {
     return '<span style=\"opacity: 0.8; color:' + (enabled ? 'green;\">enabled' : 'red;\">disabled') + '</span>';
 }
@@ -1994,11 +1999,11 @@ window.social.src = "http://www.gameforest.ro/ike/social.html";
 window.social.height = "80px";
 document.getElementById('twt').remove();
 document.getElementById('fb').remove();
-document.getElementById("csk").childNodes[1].src = "http://www.slither-io.com/chrome/changeskin2.png";
+//document.getElementById("csk").childNodes[1].src = "http://www.slither-io.com/chrome/changeskin2.png";
 //Default newest skin
-if(localStorage.snakercv == undefined){
-    localStorage.snakercv = max_skin_cv;
-}
+//if(localStorage.snakercv == undefined){
+//    localStorage.snakercv = max_skin_cv;
+//}
 window.addEventListener('click', function(){$(window).focus()});
 //Chat Online
 var chatovodOnLoad = chatovodOnLoad || [];
